@@ -5,7 +5,6 @@ function calculateAge() {
   let birthDate = new Date(dob);
   let today = new Date();
 
-  // If user selects future date
   if (birthDate > today) {
     result.innerHTML = "Invalid Date of Birth!";
     result.style.color = "red";
@@ -16,14 +15,12 @@ function calculateAge() {
   let months = today.getMonth() - birthDate.getMonth();
   let days = today.getDate() - birthDate.getDate();
 
-  // Adjust days
   if (days < 0) {
     months--;
     let prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
     days += prevMonth.getDate();
   }
 
-  // Adjust months
   if (months < 0) {
     years--;
     months += 12;
